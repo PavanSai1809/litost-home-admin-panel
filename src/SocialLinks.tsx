@@ -15,7 +15,7 @@ const SocialMediaLinks: React.FC = () => {
   const [newLink, setNewLink] = useState({ platform_name: '', url: '', section_id: 5 });
   const [editingLink, setEditingLink] = useState<SocialMediaLink | null>(null);
   const [formErrors, setFormErrors] = useState({ platform_name: '', url: '' });
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const fetchLinks = async () => {
     try {
@@ -117,7 +117,7 @@ const SocialMediaLinks: React.FC = () => {
   return (
       <div className="mb-8 p-6 bg-white rounded-lg shadow-lg border border-gray-200 container mx-auto p-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-semibold text-gray-800">Social Media Links</h2>
+          <h2 className="text-3xl font-semibold text-gray-800">Footer - Social Media Links</h2>
           <span
             onClick={toggleVisibility}
             className="cursor-pointer text-2xl text-gray-600 hover:text-gray-800"

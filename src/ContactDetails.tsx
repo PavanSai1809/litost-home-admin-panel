@@ -15,7 +15,7 @@ const ContactDetails: React.FC = () => {
   const [newDetail, setNewDetail] = useState({ contact_type: '', value: '', section_id: 5 });
   const [editingDetail, setEditingDetail] = useState<ContactDetail | null>(null);
   const [formErrors, setFormErrors] = useState({ contact_type: '', value: '' });
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const fetchDetails = async () => {
     try {
@@ -122,7 +122,7 @@ const ContactDetails: React.FC = () => {
   return (
     <div className="mb-8 p-6 bg-white rounded-lg shadow-lg border border-gray-200 container mx-auto p-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-semibold text-gray-800">Contact Details</h2>
+        <h2 className="text-3xl font-semibold text-gray-800">Footer - Contact Details</h2>
         <span
           onClick={toggleVisibility}
           className="cursor-pointer text-2xl text-gray-600 hover:text-gray-800"

@@ -118,10 +118,6 @@ const SectionCard: React.FC = () => {
     }
   };
   
-  
-  
-  
-
   const handleEditContent = (content: SectionContent) => {
     setEditingContent(content);
     setNewContent({ title: content.title, description: content.description });
@@ -214,6 +210,8 @@ const SectionCard: React.FC = () => {
     }
   };
 
+  const filteredSections = sections.filter((section) => section.sectionName !== 'Footer');
+
   const toggleSectionVisibility = (sectionId: number) => {
     setOpenSections((prevState) => ({
       ...prevState,
@@ -225,7 +223,7 @@ const SectionCard: React.FC = () => {
     <div className="container mx-auto p-6">
       <h1 className="text-4xl font-bold text-gray-800 mb-8">Admin Panel</h1>
 
-      {sections.map((section) => (
+      {filteredSections.map((section) => (
         <div key={section.id} className="mb-8 p-6 bg-white rounded-lg shadow-lg border border-gray-200">
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-semibold text-gray-800">
@@ -241,7 +239,6 @@ const SectionCard: React.FC = () => {
 
           {openSections[section.id] && (
             <>
-              <p className="text-sm text-gray-400 mt-2">Display Order: {section.displayOrder}</p>
 
               <div className="mt-6">
                 <h3 className="text-2xl font-semibold text-gray-700">Content</h3>
