@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import SocialMedia from './SocialLinks';
+import ContactDetails from './ContactDetails';
 
 interface SectionContent {
   id: number;
@@ -129,7 +131,6 @@ const SectionCard: React.FC = () => {
     if (!validateFields()) return;
   
     if (editingContent) {
-      // Optimistic UI update: Update the section content in the state immediately
       setSections((prev) => {
         const updatedSections = prev.map((section) =>
           section.id === sectionId
@@ -185,7 +186,6 @@ const SectionCard: React.FC = () => {
         setFormErrors({ title: '', description: '' });
       } catch (error) {
         console.error('Error updating content', error);
-        // If there's an error, revert to the previous state or show an error message
       }
     }
   };
@@ -307,6 +307,8 @@ const SectionCard: React.FC = () => {
           )}
         </div>
       ))}
+      <SocialMedia/>
+      <ContactDetails/>
     </div>
   );
 };

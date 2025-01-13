@@ -5,7 +5,6 @@ import SectionCard from './Home';
 import Login from './Login';
 import './styles/index.css';
 
-// ProtectedRoute Component
 const ProtectedRoute: React.FC<{ element: React.ReactNode; isAuthenticated: boolean }> = ({ element, isAuthenticated }) => {
   return isAuthenticated ? (
     <>{element}</>
